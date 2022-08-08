@@ -5,11 +5,11 @@ const fetchData = async (searhTerm) => {
       s: searhTerm,
     },
   });
+};
+const input = document.querySelector("input");
 
-  console.log(response.data);
+const onInput = (e) => {
+  fetchData(e.target.value);
 };
 
-const input = document.querySelector("input");
-input.addEventListener("input", (e) => {
-  fetchData(e.target.value);
-});
+input.addEventListener("input", debounce(onInput, 1000));
