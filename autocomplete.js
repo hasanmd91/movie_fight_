@@ -1,6 +1,12 @@
-const autoComplete = ({ root, renderOption, onOptionSelect, onInputValue }) => {
+const autoComplete = ({
+  root,
+  renderOption,
+  onOptionSelect,
+  onInputValue,
+  fetchData,
+}) => {
   root.innerHTML = `
-<label> <b> Serach for a Movie </b> </label>
+<label> <b> Serach for a item </b> </label>
 <input class="input" />
 <div class="dropdown">
   <div class="dropdown-menu">
@@ -14,23 +20,23 @@ const autoComplete = ({ root, renderOption, onOptionSelect, onInputValue }) => {
   const resultsWrapper = root.querySelector(".result");
 
   const onInput = async (e) => {
-    const movies = await fetchdata(e.target.value);
-    if (!movies.length) {
+    const items = await fetchData(e.target.value);
+    if (!items.length) {
       dropdown.classList.remove("is-active");
       return;
     }
 
     dropdown.classList.add("is-active");
     resultsWrapper.innerHTML = "";
-    for (let movie of movies) {
+    for (let item of items) {
       const option = document.createElement("a");
       option.classList.add("dropdown-item");
-      option.innerHTML = renderOption(movie);
+      option.innerHTML = renderOption(item);
 
       option.addEventListener("click", () => {
         dropdown.classList.remove("is-active");
-        input.value = onInputValue(movie);
-        onOptionSelect(movie);
+        input.value = onInputValue(item);
+        onOptionSelect(item);
       });
 
       resultsWrapper.appendChild(option);
