@@ -62,7 +62,11 @@ const onMovieSelect = async (movie, summaryElement, side) => {
       i: movie.imdbID,
     },
   });
+
+  // invoking singel movie template making function
+
   summaryElement.innerHTML = movieTemplate(response.data);
+  const body = document.querySelector("body");
 
   if (side === "left") {
     leftMovie = response.data;
@@ -105,6 +109,7 @@ const comparison = () => {
 
 const movieTemplate = (movieDetails) => {
   // parsing all statistis value to number
+
   const dollars = parseInt(
     movieDetails.BoxOffice.replace(/\$/g, "").replace(/,/g, "")
   );
@@ -119,7 +124,7 @@ const movieTemplate = (movieDetails) => {
       return prev + value;
     }
   }, 0);
-  console.log(awards);
+
   return ` 
   <article class="media">
   <figure class="media-left">

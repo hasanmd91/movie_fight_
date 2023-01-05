@@ -46,3 +46,11 @@ figure .image img {
   height: 50px;
   margin-right: 10px;
 }
+
+.input {
+  padding: 20px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-radius: 5px;
+  border: none;
+  margin-top: 5px;
+}

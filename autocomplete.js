@@ -6,7 +6,7 @@ const autoComplete = ({
   fetchData,
 }) => {
   root.innerHTML = `
-<label> <b> Serach for a item </b> </label>
+<label> <b> Serach for a movie </b> </label>
 <input class="input" />
 <div class="dropdown">
   <div class="dropdown-menu">
