@@ -13,7 +13,7 @@ Let Movie fight help! This simple and easy-to-use website will let you compare t
 - Css
 - bulma css
 
-## Sources
+## API Reference
 
 - https://www.omdbapi.com/
 
@@ -30,3 +30,7 @@ Live page [here](https://hasanmd91.github.io/movie_fight_/)
 ## Sources
 
 - [source code](https://github.com/hasanmd91/movie_fight_)
+
+## Authors
+
+- [@Md Abul Hasan](https://github.com/hasanmd91?tab=repositories)
